@@ -10,6 +10,7 @@ const [physics, setPhysics] = useState(0);
 const [chemistry, setChemistry] = useState(0);
 const [math, setMath] = useState(0);
 const[students,setStudents]=useState([]);
+const [search, setSearch] = useState("");
 useEffect(()=>{
 
 /*-------- for Dropdown of college name------- */
@@ -53,6 +54,10 @@ console.error("Error fetching students:", error);
 }
 
 }
+/*-------- ------for search---------------------------- */
+const filteredStudents = students.filter((item) =>
+  item.studentName.toLowerCase().includes(search.toLowerCase())
+);
 
 /**--------------------------------------- */
 /*------------------- for total ,percentage calculation------------------- */
@@ -204,7 +209,7 @@ const Resetall=()=>{
     setChemistry("");
     setMath("");
 }
-/*-------- ----------------------------------------- */
+
  return (
     <div className="main_dv">
       <form  onSubmit={handleSave}>
@@ -271,7 +276,8 @@ const Resetall=()=>{
         </div>
 
         <div className="search-container">
-          <input type="text" placeholder="Search.." name="search" />
+          <input type="text"    placeholder="Search by student name..."
+           name="search"  value={search}  onChange={(e) => setSearch(e.target.value)}/>
           <button type="button">
             <i className="fa fa-search" />
           </button>
@@ -291,9 +297,9 @@ const Resetall=()=>{
 
           <tbody>
             {
-              students.length > 0 ?
+              filteredStudents.length > 0 ?
               (
-                students.map((item)=>(
+                filteredStudents.map((item)=>(
                   <tr key={item.studentId}>
                     <td>{item.studentName}</td>
                     <td>{item.total}</td>
