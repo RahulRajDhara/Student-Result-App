@@ -1,0 +1,436 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: #26364a;
+    background: #16171d;
+}
+
+/* ========================================
+   MAIN PAGE
+======================================== */
+.main_dv {
+    width: 100%;
+    min-height: 100vh;
+    padding: 25px 15px 40px;
+    background-color: #16171d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ========================================
+   MAIN FORM
+======================================== */
+.main_dv form {
+    width: 100%;
+    max-width: 695px;
+    padding: 25px;
+    background-color: #ffffff;
+    border-top: 4px solid #1769d2;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================
+   COLLEGE AND NAME LABELS
+======================================== */
+.main_dv form > label {
+    display: block;
+    margin: 3px 0 8px;
+    color: #0645ad;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+/* ========================================
+   COLLEGE DROPDOWN AND NAME INPUT
+======================================== */
+.main_dv form > select,
+.main_dv form > input[type="text"] {
+    display: block;
+    width: 100%;
+    height: 36px;
+    margin-bottom: 17px;
+    padding: 7px 12px;
+    border: 1px solid #c5d9fb;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #26364a;
+    font-size: 12px;
+    font-weight: 400;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.main_dv input:focus,
+.main_dv select:focus {
+    border-color: #1769d2;
+    box-shadow: 0 0 0 2px rgba(23, 105, 210, 0.10);
+}
+
+/* ========================================
+   MARKS AND GRADE MAIN WRAPPER
+======================================== */
+.half_dv_wrp {
+    display: flex;
+    align-items: stretch;
+    gap: 17px;
+    width: 100%;
+    margin: 8px 0 20px;
+    padding: 16px;
+    border: 1px solid #c5d9fb;
+    border-radius: 6px;
+    background-color: #eaf3ff;
+}
+
+/* Clearfix */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ========================================
+   MARKS AND GRADE PANELS
+======================================== */
+.half_dv {
+    flex: 1;
+    min-width: 0;
+    min-height: 260px;
+    padding: 16px;
+    border: 1px solid #c5d9fb;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+/* Marks Heading */
+.half_dv h2 {
+    margin: 0;
+    padding-bottom: 10px;
+    color: #0645ad;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+/* Blue line under Marks */
+.half_dv hr {
+    height: 3px;
+    margin: 0 0 17px;
+    border: none;
+    border-radius: 2px;
+    background-color: #1769d2;
+}
+
+/* ========================================
+   PHYSICS, CHEMISTRY, MATH, TOTAL,
+   GRADE AND PERCENTAGE ROWS
+======================================== */
+.half_Wrp_dv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Field labels */
+.half_Wrp_dv label {
+    flex: 0 0 36%;
+    margin: 0;
+    color: #0645ad;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Field inputs */
+.half_Wrp_dv input {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+    height: 34px;
+    padding: 6px 10px;
+    border: 1px solid #c5d9fb;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #26364a;
+    font-size: 12px;
+    font-weight: 400;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.half_Wrp_dv input:focus {
+    border-color: #1769d2;
+    box-shadow: 0 0 0 2px rgba(23, 105, 210, 0.08);
+}
+
+/* Read-only calculated fields */
+.half_Wrp_dv input[readonly] {
+    background-color: #eaf3ff;
+    color: #0645ad;
+    font-weight: 500;
+    cursor: default;
+}
+
+/* Hide number input spinner */
+.half_Wrp_dv input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.half_Wrp_dv input[type="number"]::-webkit-inner-spin-button,
+.half_Wrp_dv input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ========================================
+   SAVE, RESET AND LOAD MORE BUTTONS
+======================================== */
+.btn_group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 20px;
+}
+
+/* All buttons in button groups */
+.btn_group button,
+.btn_group input[type="reset"],
+.btn_group input[type="button"] {
+    min-width: 88px;
+    height: 32px;
+    padding: 0 18px;
+    border: 1px solid #1764bd;
+    border-radius: 4px;
+    background-color: #1764bd;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn_group button:hover,
+.btn_group input[type="reset"]:hover,
+.btn_group input[type="button"]:hover {
+    border-color: #0645ad;
+    background-color: #0645ad;
+}
+
+.btn_group button:active,
+.btn_group input[type="reset"]:active,
+.btn_group input[type="button"]:active {
+    transform: translateY(1px);
+}
+
+/* Save button: your JSX button has no text */
+.btn_group button[type="submit"] {
+    font-size: 12px;
+}
+
+.btn_group button[type="submit"]::after {
+    content: "Save";
+}
+
+/* ========================================
+   SEARCH BOX
+======================================== */
+.search-container {
+    display: flex;
+    width: 100%;
+    max-width: 320px;
+    height: 36px;
+    margin: 0 0 15px auto;
+}
+
+.search-container input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    height: 36px;
+    padding: 8px 12px;
+    border: 1px solid #c5d9fb;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    background-color: #ffffff;
+    color: #26364a;
+    font-size: 12px;
+    outline: none;
+}
+
+.search-container input[type="text"]:focus {
+    border-color: #1769d2;
+    box-shadow: none;
+}
+
+/* Search button */
+.search-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 39px;
+    flex-shrink: 0;
+    border: 1px solid #1764bd;
+    border-radius: 0 4px 4px 0;
+    background-color: #1764bd;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-container button:hover {
+    background-color: #0645ad;
+}
+
+/* Search icon */
+.search-container button i {
+    font-size: 14px;
+}
+
+/* ========================================
+   STUDENT RESULT TABLE
+======================================== */
+#customers {
+    width: 100%;
+    margin: 0 0 20px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    color: #26364a;
+    font-size: 12px;
+}
+
+/* Table headings */
+#customers th {
+    padding: 12px 10px;
+    background-color: #1764bd;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-align: left;
+    border: 1px solid #1764bd;
+}
+
+/* Table cells */
+#customers td {
+    padding: 11px 10px;
+    border: 1px solid #d5e3f7;
+    font-size: 12px;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+/* Alternate row background */
+#customers tbody tr:nth-child(even) {
+    background-color: #f0f6ff;
+}
+
+/* Table row hover */
+#customers tbody tr:hover {
+    background-color: #e1edff;
+}
+
+/* Center action columns */
+#customers th:nth-child(n+4),
+#customers td:nth-child(n+4) {
+    text-align: center;
+}
+
+/* Table action icons */
+#customers td .fa {
+    display: inline-block;
+    padding: 5px;
+    color: #1764bd;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+#customers td .fa-pencil:hover {
+    color: #0645ad;
+    transform: scale(1.12);
+}
+
+/* Delete icon */
+#customers td .fa-trash-o {
+    color: #dc3545;
+}
+
+#customers td .fa-trash-o:hover {
+    color: #b02a37;
+    transform: scale(1.12);
+}
+
+/* Print icon */
+#customers td .fa-print {
+    color: #1764bd;
+}
+
+#customers td .fa-print:hover {
+    color: #0645ad;
+    transform: scale(1.12);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 600px) {
+    .main_dv {
+        padding: 12px;
+    }
+
+    .main_dv form {
+        padding: 15px;
+    }
+
+    .half_dv_wrp {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .half_dv {
+        width: 100%;
+        min-height: auto;
+        padding: 14px;
+    }
+
+    .half_Wrp_dv label {
+        flex-basis: 36%;
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    #customers th,
+    #customers td {
+        padding: 8px 5px;
+        font-size: 11px;
+    }
+
+    #customers td .fa {
+        padding: 3px;
+        font-size: 14px;
+    }
+}
